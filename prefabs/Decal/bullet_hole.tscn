@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://h66v7weioub2"]
+
+[ext_resource type="Texture2D" uid="uid://sqrlla61op2y" path="res://Resources/textures/projectiles/bullet-hole.png" id="1_rj3qn"]
+[ext_resource type="PackedScene" uid="uid://btojqclgdagw" path="res://prefabs/Decal/hitsound.tscn" id="2_6myjk"]
+
+[node name="BulletHole" type="Decal"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+top_level = true
+size = Vector3(0.3, 0.3, 0.3)
+texture_albedo = ExtResource("1_rj3qn")
+upper_fade = 0.0128066
+lower_fade = 7712.78
+
+[node name="Hitsound" parent="." instance=ExtResource("2_6myjk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

@@ -1,0 +1,237 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqmss0uyvjjcq"]
+
+[ext_resource type="Script" path="res://Script/UI/Main Menu.gd" id="1_shw85"]
+[ext_resource type="AudioStream" uid="uid://c21d5yxuoak0k" path="res://Resources/Audio/guns/revolver/revolver_shoot.wav" id="2_tl0ds"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2e1jh"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tc6a5"]
+font_size = 26
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main Menu UI" type="Node"]
+script = ExtResource("1_shw85")
+
+[node name="StartMenu" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.5
+offset_top = -86.0
+offset_right = 160.5
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="StartMenu/VBoxContainer"]
+layout_mode = 2
+text = "killerVkiller"
+label_settings = SubResource("LabelSettings_2e1jh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="StartMenu/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="StartMenu/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="StartMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="OptionsMenu" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -108.0
+offset_right = 200.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="Volume" type="Panel" parent="OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/Volume"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 20.0
+text = "Volume: 100"
+
+[node name="Game Volume" type="HSlider" parent="OptionsMenu/VBoxContainer/Volume"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 334.0
+offset_bottom = 35.0
+value = 100.0
+tick_count = 100
+
+[node name="AudioTest" type="AudioStreamPlayer" parent="OptionsMenu/VBoxContainer/Volume"]
+stream = ExtResource("2_tl0ds")
+
+[node name="Resolution" type="Panel" parent="OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/Resolution"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 20.0
+text = "Resolution"
+
+[node name="Resolution" type="OptionButton" parent="OptionsMenu/VBoxContainer/Resolution"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 19.5
+offset_right = 334.0
+offset_bottom = 39.5
+
+[node name="Fullscreen" type="Panel" parent="OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer/Fullscreen"]
+layout_mode = 0
+offset_right = 315.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/Fullscreen/HBoxContainer"]
+layout_mode = 2
+text = "Fullscreen
+"
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="OptionsMenu/VBoxContainer/Fullscreen/HBoxContainer"]
+layout_mode = 2
+
+[node name="Vsync" type="Panel" parent="OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer/Vsync"]
+layout_mode = 0
+offset_right = 315.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/Vsync/HBoxContainer"]
+layout_mode = 2
+text = "Vsync
+"
+
+[node name="Vsync" type="CheckBox" parent="OptionsMenu/VBoxContainer/Vsync/HBoxContainer"]
+layout_mode = 2
+
+[node name="Borderless" type="Panel" parent="OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer/Borderless"]
+layout_mode = 0
+offset_right = 315.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="OptionsMenu/VBoxContainer/Borderless/HBoxContainer"]
+layout_mode = 2
+text = "Borderless
+"
+
+[node name="Borderless" type="CheckBox" parent="OptionsMenu/VBoxContainer/Borderless/HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsBack" type="Button" parent="OptionsMenu/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="GameSettings" type="MarginContainer" parent="."]
+visible = false
+offset_left = 418.0
+offset_top = 275.0
+offset_right = 732.0
+offset_bottom = 376.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameSettings"]
+layout_mode = 2
+
+[node name="RoundSetting" type="Panel" parent="GameSettings/VBoxContainer"]
+custom_minimum_size = Vector2(100, 65)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameSettings/VBoxContainer/RoundSetting"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 168.0
+offset_bottom = 59.0
+
+[node name="Label" type="Label" parent="GameSettings/VBoxContainer/RoundSetting/VBoxContainer"]
+layout_mode = 2
+text = "Score Limit: 5"
+label_settings = SubResource("LabelSettings_tc6a5")
+
+[node name="HSlider" type="HSlider" parent="GameSettings/VBoxContainer/RoundSetting/VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 30.0
+value = 5.0
+rounded = true
+
+[node name="Select Maps" type="Button" parent="GameSettings/VBoxContainer"]
+layout_mode = 2
+text = "Select Maps"
+
+[node name="Start Button" type="Button" parent="GameSettings/VBoxContainer"]
+layout_mode = 2
+text = "Start Game!"
+
+[node name="Warning" type="Panel" parent="GameSettings/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameSettings/VBoxContainer/Warning"]
+layout_mode = 2
+offset_top = 8.0
+offset_right = 314.0
+offset_bottom = 31.0
+text = "Not Enough Maps enabled!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameSettings/VBoxContainer/Warning"]
+
+[node name="VisibilityTimer" type="Timer" parent="GameSettings/VBoxContainer/Warning"]
+
+[connection signal="pressed" from="StartMenu/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="StartMenu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="drag_ended" from="OptionsMenu/VBoxContainer/Volume/Game Volume" to="." method="_on_game_volume_drag_ended"]
+[connection signal="value_changed" from="OptionsMenu/VBoxContainer/Volume/Game Volume" to="." method="_on_game_volume_value_changed"]
+[connection signal="item_selected" from="OptionsMenu/VBoxContainer/Resolution/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer/Fullscreen/HBoxContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer/Vsync/HBoxContainer/Vsync" to="." method="_on_vsync_toggled"]
+[connection signal="toggled" from="OptionsMenu/VBoxContainer/Borderless/HBoxContainer/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="pressed" from="OptionsMenu/VBoxContainer/OptionsBack" to="." method="_on_options_back_pressed"]
+[connection signal="value_changed" from="GameSettings/VBoxContainer/RoundSetting/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="GameSettings/VBoxContainer/Select Maps" to="." method="_on_select_maps_pressed"]

@@ -1,0 +1,258 @@
+[gd_scene load_steps=45 format=3 uid="uid://bfnado87e8tka"]
+
+[ext_resource type="Script" path="res://Script/Player/FPSController.gd" id="1_w1uvi"]
+[ext_resource type="Script" path="res://prefabs/Ped/Player/interact_raycast.gd" id="2_7y858"]
+[ext_resource type="Script" path="res://Script/Peds/ped_spawner.gd" id="2_88fk4"]
+[ext_resource type="Script" path="res://prefabs/Ped/Player/unarmed.gd" id="2_jvm6e"]
+[ext_resource type="ArrayMesh" uid="uid://cjcwn6ppjdir3" path="res://Resources/Models/Player/Cosmetic/Hair/Combover.tres" id="3_56lfu"]
+[ext_resource type="ArrayMesh" uid="uid://b3h50r8bvn2n5" path="res://Resources/Models/Player/Cosmetic/Hair/FlatTop.tres" id="4_1y1vw"]
+[ext_resource type="ArrayMesh" uid="uid://du7nl7mwc3cyu" path="res://Resources/Models/Player/Cosmetic/Hair/Long.tres" id="5_cy83j"]
+[ext_resource type="ArrayMesh" uid="uid://dea3slaw3tsm" path="res://Resources/Models/Player/Cosmetic/Hair/Curly.tres" id="6_wu2lf"]
+[ext_resource type="ArrayMesh" uid="uid://c7a7mef0ytbqi" path="res://Resources/Models/Player/Cosmetic/Hair/Bald.tres" id="7_ocjf6"]
+[ext_resource type="ArrayMesh" uid="uid://dcrddgkyo4jfy" path="res://Resources/Models/Player/Cosmetic/Shirts/CropTop.tres" id="8_8f4ll"]
+[ext_resource type="ArrayMesh" uid="uid://cumf87e1rm5tg" path="res://Resources/Models/Player/Cosmetic/Shirts/Shirt.tres" id="9_4uybj"]
+[ext_resource type="ArrayMesh" uid="uid://cceqv5t2pi14o" path="res://Resources/Models/Player/Cosmetic/Shirts/TankTop.tres" id="10_46bfv"]
+[ext_resource type="ArrayMesh" uid="uid://cvw0gkscro6n1" path="res://Resources/Models/Player/Cosmetic/Shirts/Tshirt.tres" id="11_j5ko7"]
+[ext_resource type="ArrayMesh" uid="uid://cco2eypwduxxm" path="res://Resources/Models/Player/Cosmetic/Pants/Pants.tres" id="12_at2e0"]
+[ext_resource type="ArrayMesh" uid="uid://dqr6uh7hn0oj5" path="res://Resources/Models/Player/Cosmetic/Pants/Shorts.tres" id="13_0c3li"]
+[ext_resource type="ArrayMesh" uid="uid://bxa0ye0epex6c" path="res://Resources/Models/Player/Cosmetic/Pants/ShortShorts.tres" id="14_422ar"]
+[ext_resource type="ArrayMesh" uid="uid://lp0ho6slqcb5" path="res://Resources/Models/Player/Cosmetic/Pants/Skirt.tres" id="15_okssi"]
+[ext_resource type="ArrayMesh" uid="uid://cq75g131lerrc" path="res://Resources/Models/Player/Cosmetic/Shoes/Boots.tres" id="16_nomn3"]
+[ext_resource type="ArrayMesh" uid="uid://bmpw2w1igku61" path="res://Resources/Models/Player/Cosmetic/Shoes/Loafers.tres" id="17_ayast"]
+[ext_resource type="ArrayMesh" uid="uid://d0rloca5kpxxg" path="res://Resources/Models/Player/Cosmetic/Shoes/Slippers.tres" id="18_o4nfs"]
+[ext_resource type="ArrayMesh" uid="uid://d05ejphm8fv10" path="res://Resources/Models/Player/Cosmetic/Shoes/Sneakers.tres" id="19_xr57q"]
+[ext_resource type="Material" uid="uid://jkjrq7qa0o0f" path="res://Resources/Materials/cos_beige.tres" id="20_pkbst"]
+[ext_resource type="Material" uid="uid://cjkc83y8yyg5w" path="res://Resources/Materials/cos_sandybrown.tres" id="21_xv6kr"]
+[ext_resource type="Material" uid="uid://c4hdjimxft8l5" path="res://Resources/Materials/cos_white.tres" id="22_l0hot"]
+[ext_resource type="Material" uid="uid://dsmgt84r1cwbw" path="res://Resources/Materials/cos_skinbrown.tres" id="23_p3bid"]
+[ext_resource type="Material" uid="uid://cm4jtwe433ym6" path="res://Resources/Materials/cos_lightyellow.tres" id="24_f0wyk"]
+[ext_resource type="Material" uid="uid://s3a2asv52qtu" path="res://Resources/Materials/cos_coral.tres" id="25_0bt7f"]
+[ext_resource type="Material" uid="uid://l8vdl8yx4oql" path="res://Resources/Materials/cos_crimson.tres" id="26_6q568"]
+[ext_resource type="Material" uid="uid://dmmcx6gwvd46q" path="res://Resources/Materials/cos_navyblue.tres" id="27_2gr5d"]
+[ext_resource type="Material" uid="uid://3oeocyw33old" path="res://Resources/Materials/cos_olivegreen.tres" id="28_og4kk"]
+[ext_resource type="Material" uid="uid://df717mukhoe1n" path="res://Resources/Materials/cos_black.tres" id="29_n6qra"]
+[ext_resource type="Material" uid="uid://70it4o5mxno2" path="res://Resources/Materials/cos_violet.tres" id="30_x0hp7"]
+[ext_resource type="Material" uid="uid://4geut0alfdjw" path="res://Resources/Materials/cos_neongreen.tres" id="31_yfslc"]
+[ext_resource type="Material" uid="uid://7qkypn7faxu1" path="res://Resources/Materials/cos_pink.tres" id="32_gdl65"]
+[ext_resource type="Material" uid="uid://bn3wo2tvvf6e3" path="res://Resources/Materials/cos_orange.tres" id="33_wp81u"]
+[ext_resource type="Material" uid="uid://bww6sraru85yr" path="res://Resources/Materials/cos_brown.tres" id="34_dlsuc"]
+[ext_resource type="Material" uid="uid://y47wrtkynher" path="res://Resources/Materials/cos_hairred.tres" id="35_a1gcs"]
+[ext_resource type="Script" path="res://Script/Peds/inventory.gd" id="36_2vpsf"]
+[ext_resource type="PackedScene" uid="uid://rt5rsvcgjsgb" path="res://prefabs/UI/UISlot.tscn" id="38_8cip0"]
+[ext_resource type="PackedScene" uid="uid://cl330fkou8pmv" path="res://Nodes/Items/unarmed.tscn" id="38_wmf8k"]
+[ext_resource type="Script" path="res://Script/UI/inventory_ui.gd" id="39_0jvd5"]
+[ext_resource type="Texture2D" uid="uid://ccgsh2v5t33rr" path="res://Resources/textures/UI/Crosshair.png" id="40_rs33g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_87jgt"]
+radius = 0.658801
+height = 6.09703
+
+[sub_resource type="LabelSettings" id="LabelSettings_odmly"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Ped" type="CharacterBody3D"]
+script = ExtResource("1_w1uvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_87jgt")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34931, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2767, 0)
+
+[node name="Items" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.338121, -0.247106, -0.891453)
+
+[node name="Unarmed" type="Node3D" parent="Head/Camera3D/Items"]
+script = ExtResource("2_jvm6e")
+
+[node name="InteractRaycast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -7)
+script = ExtResource("2_7y858")
+
+[node name="PedLoader" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+script = ExtResource("2_88fk4")
+dict_hair = {
+"Bald": ExtResource("7_ocjf6"),
+"Combover": ExtResource("3_56lfu"),
+"Curly": ExtResource("6_wu2lf"),
+"FlatTop": ExtResource("4_1y1vw"),
+"Long": ExtResource("5_cy83j")
+}
+dict_shirt = {
+"CropTop": ExtResource("8_8f4ll"),
+"Shirt": ExtResource("9_4uybj"),
+"TankTop": ExtResource("10_46bfv"),
+"Tshirt": ExtResource("11_j5ko7")
+}
+dict_pants = {
+"Pants": ExtResource("12_at2e0"),
+"ShortShorts": ExtResource("14_422ar"),
+"Shorts": ExtResource("13_0c3li"),
+"Skirt": ExtResource("15_okssi")
+}
+dict_shoes = {
+"Boots": ExtResource("16_nomn3"),
+"Loafers": ExtResource("17_ayast"),
+"Slippers": ExtResource("18_o4nfs"),
+"Sneakers": ExtResource("19_xr57q")
+}
+dict_skin_color = {
+"Beige": ExtResource("20_pkbst"),
+"Coral": ExtResource("25_0bt7f"),
+"Dark Brown": ExtResource("23_p3bid"),
+"Light Brown": ExtResource("21_xv6kr"),
+"Light Yellow": ExtResource("24_f0wyk"),
+"White": ExtResource("22_l0hot")
+}
+dict_clothes_color = {
+"Black": ExtResource("29_n6qra"),
+"Brown": ExtResource("34_dlsuc"),
+"Crimson": ExtResource("26_6q568"),
+"Navy Blue": ExtResource("27_2gr5d"),
+"Neon Green": ExtResource("31_yfslc"),
+"Olive Green": ExtResource("28_og4kk"),
+"Orange": ExtResource("33_wp81u"),
+"Pink": ExtResource("32_gdl65"),
+"Violet": ExtResource("30_x0hp7"),
+"White": ExtResource("22_l0hot")
+}
+dict_hair_color = {
+"Black": ExtResource("29_n6qra"),
+"Blonde": ExtResource("24_f0wyk"),
+"Brown": ExtResource("34_dlsuc"),
+"Gray": ExtResource("35_a1gcs"),
+"Navy Blue": ExtResource("27_2gr5d"),
+"Neon Green": ExtResource("31_yfslc"),
+"Red": ExtResource("35_a1gcs")
+}
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("36_2vpsf")
+
+[node name="Starter" type="Node" parent="Inventory"]
+
+[node name="Unarmed" parent="Inventory/Starter" instance=ExtResource("38_wmf8k")]
+weapon_scene = "res://Nodes/Items/unarmed.tscn"
+
+[node name="InventoryUI" type="CanvasLayer" parent="Inventory"]
+
+[node name="InventoryControl" type="Control" parent="Inventory/InventoryUI"]
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("39_0jvd5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/InventoryUI/InventoryControl"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="UISlot" parent="Inventory/InventoryUI/InventoryControl/HBoxContainer" instance=ExtResource("38_8cip0")]
+visible = false
+modulate = Color(1, 1, 1, 0.101961)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="UISlot2" parent="Inventory/InventoryUI/InventoryControl/HBoxContainer" instance=ExtResource("38_8cip0")]
+visible = false
+modulate = Color(1, 1, 1, 0.101961)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="UISlot3" parent="Inventory/InventoryUI/InventoryControl/HBoxContainer" instance=ExtResource("38_8cip0")]
+visible = false
+modulate = Color(1, 1, 1, 0.101961)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="UISlot4" parent="Inventory/InventoryUI/InventoryControl/HBoxContainer" instance=ExtResource("38_8cip0")]
+visible = false
+modulate = Color(1, 1, 1, 0.101961)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause"]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 224.0
+offset_right = 663.0
+offset_bottom = 291.0
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_odmly")
+
+[node name="Button" type="Button" parent="CanvasLayer/Pause"]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 305.0
+offset_right = 615.0
+offset_bottom = 336.0
+text = "Unpause"
+
+[node name="Crosshair" type="Control" parent="CanvasLayer"]
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Crosshair"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Crosshair/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("40_rs33g")
+
+[connection signal="pickup_item" from="Head/Camera3D/InteractRaycast" to="." method="_on_interact_raycast_pickup_item"]
+[connection signal="gen_complete" from="PedLoader" to="." method="_on_ped_loader_gen_complete"]
+[connection signal="new_current_item_selected" from="Inventory" to="." method="_on_inventory_new_current_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Pause/Button" to="." method="_on_button_pressed"]

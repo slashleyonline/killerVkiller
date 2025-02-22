@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjjjjtellgirq"]
+
+[ext_resource type="PackedScene" uid="uid://dsdr2e140h63s" path="res://Maps/Debug/debug_level.tscn" id="1_p8fdw"]
+[ext_resource type="PackedScene" uid="uid://bfnado87e8tka" path="res://prefabs/Ped/Player/player.tscn" id="2_n7rsf"]
+
+[node name="gameplay_test" type="Node3D"]
+
+[node name="DebugLevel" parent="." instance=ExtResource("1_p8fdw")]
+
+[node name="Ped" parent="." instance=ExtResource("2_n7rsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224598, 1, 25.8653)

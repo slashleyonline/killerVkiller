@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://rt5rsvcgjsgb"]
+
+[ext_resource type="Script" path="res://Script/UI/ui_slot.gd" id="1_tnvmk"]
+[ext_resource type="Texture2D" uid="uid://bumpnskv0oy0q" path="res://Resources/textures/UI/UISlot.png" id="3_a20ta"]
+
+[node name="UISlot" type="Control"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tnvmk")
+
+[node name="Icon_slot" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+
+[node name="UISlot" type="Sprite2D" parent="Icon_slot"]
+show_behind_parent = true
+scale = Vector2(20, 20)
+texture = ExtResource("3_a20ta")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://oxvjq7sdgol7"]
+
+[ext_resource type="PackedScene" uid="uid://dhx2kr33hxjml" path="res://Resources/Models/Weapons/Fired357Bullet.glb" id="1_l3i4h"]
+[ext_resource type="Script" path="res://prefabs/Weapon/bullet.gd" id="1_pntmk"]
+
+[node name="Bullet" type="Node3D"]
+script = ExtResource("1_pntmk")
+
+[node name="Fired357Bullet" parent="." instance=ExtResource("1_l3i4h")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(-0.3, 0, 0)
+hit_from_inside = true
+debug_shape_custom_color = Color(0.745098, 0, 1, 1)
+debug_shape_thickness = 5

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8v72mistss6s"]
+
+[ext_resource type="Script" path="res://prefabs/Ped/ped_loader.gd" id="1_ft3kp"]
+
+[node name="PedLoader" type="Node3D"]
+script = ExtResource("1_ft3kp")

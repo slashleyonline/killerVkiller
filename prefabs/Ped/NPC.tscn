@@ -1,0 +1,87 @@
+[gd_scene load_steps=26 format=3 uid="uid://cub5lxdogmo6t"]
+
+[ext_resource type="Script" path="res://Script/NPC/NPC.gd" id="1_pgjos"]
+[ext_resource type="Script" path="res://Script/Peds/ped_controller.gd" id="2_dharr"]
+[ext_resource type="Script" path="res://Script/Peds/ped_spawner.gd" id="2_q1gyo"]
+[ext_resource type="ArrayMesh" uid="uid://cjcwn6ppjdir3" path="res://Resources/Models/Player/Cosmetic/Hair/Combover.tres" id="3_ifr6f"]
+[ext_resource type="ArrayMesh" uid="uid://b3h50r8bvn2n5" path="res://Resources/Models/Player/Cosmetic/Hair/FlatTop.tres" id="4_f3avv"]
+[ext_resource type="ArrayMesh" uid="uid://du7nl7mwc3cyu" path="res://Resources/Models/Player/Cosmetic/Hair/Long.tres" id="5_qnc5c"]
+[ext_resource type="ArrayMesh" uid="uid://dea3slaw3tsm" path="res://Resources/Models/Player/Cosmetic/Hair/Curly.tres" id="6_ayxvh"]
+[ext_resource type="ArrayMesh" uid="uid://c7a7mef0ytbqi" path="res://Resources/Models/Player/Cosmetic/Hair/Bald.tres" id="7_vn5as"]
+[ext_resource type="Material" uid="uid://jkjrq7qa0o0f" path="res://Resources/Materials/cos_beige.tres" id="20_5rr1i"]
+[ext_resource type="Material" uid="uid://cjkc83y8yyg5w" path="res://Resources/Materials/cos_sandybrown.tres" id="21_tug2h"]
+[ext_resource type="Material" uid="uid://c4hdjimxft8l5" path="res://Resources/Materials/cos_white.tres" id="22_hve1a"]
+[ext_resource type="Material" uid="uid://dsmgt84r1cwbw" path="res://Resources/Materials/cos_skinbrown.tres" id="23_hm8or"]
+[ext_resource type="Material" uid="uid://cm4jtwe433ym6" path="res://Resources/Materials/cos_lightyellow.tres" id="24_v4oh3"]
+[ext_resource type="Material" uid="uid://s3a2asv52qtu" path="res://Resources/Materials/cos_coral.tres" id="25_o8ov1"]
+[ext_resource type="Material" uid="uid://l8vdl8yx4oql" path="res://Resources/Materials/cos_crimson.tres" id="26_2w1h1"]
+[ext_resource type="Material" uid="uid://dmmcx6gwvd46q" path="res://Resources/Materials/cos_navyblue.tres" id="27_2q7gp"]
+[ext_resource type="Material" uid="uid://3oeocyw33old" path="res://Resources/Materials/cos_olivegreen.tres" id="28_wrpuq"]
+[ext_resource type="Material" uid="uid://df717mukhoe1n" path="res://Resources/Materials/cos_black.tres" id="29_v5usj"]
+[ext_resource type="Material" uid="uid://70it4o5mxno2" path="res://Resources/Materials/cos_violet.tres" id="30_2k2vn"]
+[ext_resource type="Material" uid="uid://4geut0alfdjw" path="res://Resources/Materials/cos_neongreen.tres" id="31_2r1qw"]
+[ext_resource type="Material" uid="uid://7qkypn7faxu1" path="res://Resources/Materials/cos_pink.tres" id="32_3p1aa"]
+[ext_resource type="Material" uid="uid://bn3wo2tvvf6e3" path="res://Resources/Materials/cos_orange.tres" id="33_yoq1t"]
+[ext_resource type="Material" uid="uid://bww6sraru85yr" path="res://Resources/Materials/cos_brown.tres" id="34_qwhkp"]
+[ext_resource type="Material" uid="uid://y47wrtkynher" path="res://Resources/Materials/cos_hairred.tres" id="35_h6og5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61gbc"]
+radius = 0.920649
+height = 6.09703
+
+[node name="Ped" type="CharacterBody3D" groups=["Pedestrian"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_pgjos")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34931, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Pedestrian"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_61gbc")
+
+[node name="Pedestrian" type="Node3D" parent="."]
+script = ExtResource("2_dharr")
+
+[node name="PedLoader" type="Node3D" parent="Pedestrian"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+script = ExtResource("2_q1gyo")
+dict_hair = {
+"Bald": ExtResource("7_vn5as"),
+"Combover": ExtResource("3_ifr6f"),
+"Curly": ExtResource("6_ayxvh"),
+"FlatTop": ExtResource("4_f3avv"),
+"Long": ExtResource("5_qnc5c")
+}
+dict_skin_color = {
+"Beige": ExtResource("20_5rr1i"),
+"Coral": ExtResource("25_o8ov1"),
+"Dark Brown": ExtResource("23_hm8or"),
+"Light Brown": ExtResource("21_tug2h"),
+"Light Yellow": ExtResource("24_v4oh3"),
+"White": ExtResource("22_hve1a")
+}
+dict_clothes_color = {
+"Black": ExtResource("29_v5usj"),
+"Brown": ExtResource("34_qwhkp"),
+"Crimson": ExtResource("26_2w1h1"),
+"Navy Blue": ExtResource("27_2q7gp"),
+"Neon Green": ExtResource("31_2r1qw"),
+"Olive Green": ExtResource("28_wrpuq"),
+"Orange": ExtResource("33_yoq1t"),
+"Pink": ExtResource("32_3p1aa"),
+"Violet": ExtResource("30_2k2vn"),
+"White": ExtResource("22_hve1a")
+}
+dict_hair_color = {
+"Black": ExtResource("29_v5usj"),
+"Blonde": ExtResource("24_v4oh3"),
+"Brown": ExtResource("34_qwhkp"),
+"Gray": ExtResource("35_h6og5"),
+"Navy Blue": ExtResource("27_2q7gp"),
+"Neon Green": ExtResource("31_2r1qw"),
+"Red": ExtResource("35_h6og5")
+}
+
+[connection signal="gen_complete" from="Pedestrian/PedLoader" to="Pedestrian" method="_on_ped_loader_gen_complete"]

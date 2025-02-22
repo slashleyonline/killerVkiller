@@ -1,0 +1,230 @@
+[gd_scene load_steps=42 format=3 uid="uid://bfnado87e8tka"]
+
+[ext_resource type="Script" path="res://Script/Player/FPSController.gd" id="1_w1uvi"]
+[ext_resource type="Script" path="res://Script/Peds/ped_spawner.gd" id="2_88fk4"]
+[ext_resource type="ArrayMesh" uid="uid://cjcwn6ppjdir3" path="res://Models/Player/Cosmetic/Hair/Combover.tres" id="3_56lfu"]
+[ext_resource type="ArrayMesh" uid="uid://b3h50r8bvn2n5" path="res://Models/Player/Cosmetic/Hair/FlatTop.tres" id="4_1y1vw"]
+[ext_resource type="ArrayMesh" uid="uid://du7nl7mwc3cyu" path="res://Models/Player/Cosmetic/Hair/Long.tres" id="5_cy83j"]
+[ext_resource type="ArrayMesh" uid="uid://dea3slaw3tsm" path="res://Models/Player/Cosmetic/Hair/Curly.tres" id="6_wu2lf"]
+[ext_resource type="ArrayMesh" uid="uid://c7a7mef0ytbqi" path="res://Models/Player/Cosmetic/Hair/Bald.tres" id="7_ocjf6"]
+[ext_resource type="ArrayMesh" uid="uid://dcrddgkyo4jfy" path="res://Models/Player/Cosmetic/Shirts/CropTop.tres" id="8_8f4ll"]
+[ext_resource type="ArrayMesh" uid="uid://cumf87e1rm5tg" path="res://Models/Player/Cosmetic/Shirts/Shirt.tres" id="9_4uybj"]
+[ext_resource type="ArrayMesh" uid="uid://cceqv5t2pi14o" path="res://Models/Player/Cosmetic/Shirts/TankTop.tres" id="10_46bfv"]
+[ext_resource type="ArrayMesh" uid="uid://cvw0gkscro6n1" path="res://Models/Player/Cosmetic/Shirts/Tshirt.tres" id="11_j5ko7"]
+[ext_resource type="ArrayMesh" uid="uid://cco2eypwduxxm" path="res://Models/Player/Cosmetic/Pants/Pants.tres" id="12_at2e0"]
+[ext_resource type="ArrayMesh" uid="uid://dqr6uh7hn0oj5" path="res://Models/Player/Cosmetic/Pants/Shorts.tres" id="13_0c3li"]
+[ext_resource type="ArrayMesh" uid="uid://bxa0ye0epex6c" path="res://Models/Player/Cosmetic/Pants/ShortShorts.tres" id="14_422ar"]
+[ext_resource type="ArrayMesh" uid="uid://lp0ho6slqcb5" path="res://Models/Player/Cosmetic/Pants/Skirt.tres" id="15_okssi"]
+[ext_resource type="ArrayMesh" uid="uid://cq75g131lerrc" path="res://Models/Player/Cosmetic/Shoes/Boots.tres" id="16_nomn3"]
+[ext_resource type="ArrayMesh" uid="uid://bmpw2w1igku61" path="res://Models/Player/Cosmetic/Shoes/Loafers.tres" id="17_ayast"]
+[ext_resource type="ArrayMesh" uid="uid://d0rloca5kpxxg" path="res://Models/Player/Cosmetic/Shoes/Slippers.tres" id="18_o4nfs"]
+[ext_resource type="ArrayMesh" uid="uid://d05ejphm8fv10" path="res://Models/Player/Cosmetic/Shoes/Sneakers.tres" id="19_xr57q"]
+[ext_resource type="Material" uid="uid://jkjrq7qa0o0f" path="res://Materials/cos_beige.tres" id="20_pkbst"]
+[ext_resource type="Material" uid="uid://cjkc83y8yyg5w" path="res://Materials/cos_sandybrown.tres" id="21_xv6kr"]
+[ext_resource type="Material" uid="uid://c4hdjimxft8l5" path="res://Materials/cos_white.tres" id="22_l0hot"]
+[ext_resource type="Material" uid="uid://dsmgt84r1cwbw" path="res://Materials/cos_skinbrown.tres" id="23_p3bid"]
+[ext_resource type="Material" uid="uid://cm4jtwe433ym6" path="res://Materials/cos_lightyellow.tres" id="24_f0wyk"]
+[ext_resource type="Material" uid="uid://s3a2asv52qtu" path="res://Materials/cos_coral.tres" id="25_0bt7f"]
+[ext_resource type="Material" uid="uid://l8vdl8yx4oql" path="res://Materials/cos_crimson.tres" id="26_6q568"]
+[ext_resource type="Material" uid="uid://dmmcx6gwvd46q" path="res://Materials/cos_navyblue.tres" id="27_2gr5d"]
+[ext_resource type="Material" uid="uid://3oeocyw33old" path="res://Materials/cos_olivegreen.tres" id="28_og4kk"]
+[ext_resource type="Material" uid="uid://df717mukhoe1n" path="res://Materials/cos_black.tres" id="29_n6qra"]
+[ext_resource type="Material" uid="uid://70it4o5mxno2" path="res://Materials/cos_violet.tres" id="30_x0hp7"]
+[ext_resource type="Material" uid="uid://4geut0alfdjw" path="res://Materials/cos_neongreen.tres" id="31_yfslc"]
+[ext_resource type="Material" uid="uid://7qkypn7faxu1" path="res://Materials/cos_pink.tres" id="32_gdl65"]
+[ext_resource type="Material" uid="uid://bn3wo2tvvf6e3" path="res://Materials/cos_orange.tres" id="33_wp81u"]
+[ext_resource type="Material" uid="uid://bww6sraru85yr" path="res://Materials/cos_brown.tres" id="34_dlsuc"]
+[ext_resource type="Material" uid="uid://y47wrtkynher" path="res://Materials/cos_hairred.tres" id="35_a1gcs"]
+[ext_resource type="PackedScene" uid="uid://74ro8jbmem5y" path="res://prefabs/Ped/inventory.tscn" id="36_whcg5"]
+[ext_resource type="Texture2D" uid="uid://bumpnskv0oy0q" path="res://textures/UI/UISlot.png" id="37_tg0y1"]
+[ext_resource type="Script" path="res://Script/UI/ui_slot.gd" id="38_ds64d"]
+[ext_resource type="Script" path="res://Script/UI/inventory_ui.gd" id="39_0jvd5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_87jgt"]
+radius = 0.920649
+height = 6.09703
+
+[sub_resource type="LabelSettings" id="LabelSettings_odmly"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Ped" type="CharacterBody3D"]
+script = ExtResource("1_w1uvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_87jgt")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34931, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2767, 0)
+
+[node name="CurrentItem" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.338121, -0.247106, -0.471709)
+
+[node name="PedLoader" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+script = ExtResource("2_88fk4")
+dict_hair = {
+"Bald": ExtResource("7_ocjf6"),
+"Combover": ExtResource("3_56lfu"),
+"Curly": ExtResource("6_wu2lf"),
+"FlatTop": ExtResource("4_1y1vw"),
+"Long": ExtResource("5_cy83j")
+}
+dict_shirt = {
+"CropTop": ExtResource("8_8f4ll"),
+"Shirt": ExtResource("9_4uybj"),
+"TankTop": ExtResource("10_46bfv"),
+"Tshirt": ExtResource("11_j5ko7")
+}
+dict_pants = {
+"Pants": ExtResource("12_at2e0"),
+"ShortShorts": ExtResource("14_422ar"),
+"Shorts": ExtResource("13_0c3li"),
+"Skirt": ExtResource("15_okssi")
+}
+dict_shoes = {
+"Boots": ExtResource("16_nomn3"),
+"Loafers": ExtResource("17_ayast"),
+"Slippers": ExtResource("18_o4nfs"),
+"Sneakers": ExtResource("19_xr57q")
+}
+dict_skin_color = {
+"Beige": ExtResource("20_pkbst"),
+"Coral": ExtResource("25_0bt7f"),
+"Dark Brown": ExtResource("23_p3bid"),
+"Light Brown": ExtResource("21_xv6kr"),
+"Light Yellow": ExtResource("24_f0wyk"),
+"White": ExtResource("22_l0hot")
+}
+dict_clothes_color = {
+"Black": ExtResource("29_n6qra"),
+"Brown": ExtResource("34_dlsuc"),
+"Crimson": ExtResource("26_6q568"),
+"Navy Blue": ExtResource("27_2gr5d"),
+"Neon Green": ExtResource("31_yfslc"),
+"Olive Green": ExtResource("28_og4kk"),
+"Orange": ExtResource("33_wp81u"),
+"Pink": ExtResource("32_gdl65"),
+"Violet": ExtResource("30_x0hp7"),
+"White": ExtResource("22_l0hot")
+}
+dict_hair_color = {
+"Black": ExtResource("29_n6qra"),
+"Blonde": ExtResource("24_f0wyk"),
+"Brown": ExtResource("34_dlsuc"),
+"Gray": ExtResource("35_a1gcs"),
+"Navy Blue": ExtResource("27_2gr5d"),
+"Neon Green": ExtResource("31_yfslc"),
+"Red": ExtResource("35_a1gcs")
+}
+
+[node name="Inventory" parent="." instance=ExtResource("36_whcg5")]
+
+[node name="InventoryUI" type="CanvasLayer" parent="Inventory"]
+
+[node name="Inventory" type="CanvasGroup" parent="Inventory/InventoryUI"]
+script = ExtResource("39_0jvd5")
+
+[node name="InventoryControl" type="Control" parent="Inventory/InventoryUI/Inventory"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 648.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/InventoryUI/Inventory/InventoryControl"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 200
+
+[node name="UISlot" type="Control" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("38_ds64d")
+
+[node name="Icon_slot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(7, 7)
+
+[node name="UISlot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot/Icon_slot"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(1, 1)
+texture = ExtResource("37_tg0y1")
+
+[node name="UISlot2" type="Control" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("38_ds64d")
+
+[node name="Icon_slot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot2"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(7, 7)
+
+[node name="UISlot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot2/Icon_slot"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(1, 1)
+texture = ExtResource("37_tg0y1")
+
+[node name="UISlot3" type="Control" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("38_ds64d")
+
+[node name="Icon_slot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot3"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(7, 7)
+
+[node name="UISlot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot3/Icon_slot"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(1, 1)
+texture = ExtResource("37_tg0y1")
+
+[node name="UISlot4" type="Control" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("38_ds64d")
+
+[node name="Icon_slot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot4"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(7, 7)
+
+[node name="UISlot" type="Sprite2D" parent="Inventory/InventoryUI/Inventory/InventoryControl/HBoxContainer/UISlot4/Icon_slot"]
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(1, 1)
+texture = ExtResource("37_tg0y1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" type="CanvasGroup" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause"]
+offset_left = 481.0
+offset_top = 224.0
+offset_right = 663.0
+offset_bottom = 291.0
+text = "Paused!"
+label_settings = SubResource("LabelSettings_odmly")
+
+[node name="Button" type="Button" parent="CanvasLayer/Pause"]
+offset_left = 525.0
+offset_top = 301.0
+offset_right = 602.0
+offset_bottom = 332.0
+text = "Unpause"
+
+[connection signal="gen_complete" from="PedLoader" to="." method="_on_ped_loader_gen_complete"]
+[connection signal="pressed" from="CanvasLayer/Pause/Button" to="." method="_on_button_pressed"]

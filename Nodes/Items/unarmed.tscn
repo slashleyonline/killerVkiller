@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl330fkou8pmv"]
+
+[ext_resource type="Script" path="res://Script/Items/Item.gd" id="1_3cd8y"]
+[ext_resource type="Texture2D" uid="uid://dxgfe3w7q5e2j" path="res://Resources/textures/Item Icons/Unarmed.png" id="2_8y32r"]
+
+[node name="Unarmed" type="Node"]
+script = ExtResource("1_3cd8y")
+title = "Unarmed"
+icon = ExtResource("2_8y32r")

@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=4 uid="uid://bjjjjtellgirq"]
+
+[ext_resource type="Texture2D" uid="uid://duyy1gwomjx6x" path="res://Resources/Models/MapTerrain/DebugLevel_Debug Tiles.png" id="1_dklty"]
+[ext_resource type="PackedScene" uid="uid://bfnado87e8tka" path="res://prefabs/Ped/Player/player.tscn" id="2_n7rsf"]
+[ext_resource type="PackedScene" uid="uid://bjl1pc7nadn2o" path="res://prefabs/Pickups/revolver_pickup.tscn" id="3_hulfk"]
+[ext_resource type="PackedScene" uid="uid://did2fjrq4xu4d" path="res://prefabs/debug/target.tscn" id="4_k2gtj"]
+[ext_resource type="PackedScene" uid="uid://6p0tllcbrqeo" path="res://prefabs/ammo boxes/357_ammo_box.tscn" id="5_ylp0d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_imels"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ikjmk"]
+sky_material = SubResource("ProceduralSkyMaterial_imels")
+
+[sub_resource type="Environment" id="Environment_b5kos"]
+background_mode = 2
+sky = SubResource("Sky_ikjmk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgqho"]
+resource_name = "Debug"
+cull_mode = 2
+albedo_texture = ExtResource("1_dklty")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8rv6m"]
+_surfaces = [{
+"aabb": AABB(-1.68224, 1, -1.68224, 3.36447, 29.5651, 3.36447),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AgAAAAEAAgADAAAAAQAGAAIAAQAFAAYAAwAEAAAAAwAHAAQABAAJAAUABAAIAAkABQAKAAYABQAJAAoABgALAAcABgAKAAsABwAIAAQABwALAAgAAgAHAAMAAgAGAAcAAAAFAAEAAAAEAAUA"),
+"name": "Debug",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("2gcAACT4AADaBwAA2gcAACT4AADaBwAAJPgAACT4AADaB///JPgAANoH///aBwAAJPj//9oHAAAk+P//JPgAAAAA/////wAAAAD//wAAAAD/////AAAAAP///////wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_id66q"]
+resource_name = "DebugLevel_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1.68224, 1, -1.68224, 3.36447, 29.5651, 3.36447),
+"attribute_data": PackedByteArray("B/Odk+T4VBS4GZ2T6/GskuT4ifio8p2TshWskpwfifio8p2TExqdk5wfVBS4GZ2TB/N2feT4VBS4GTt96/GJfeT4ifio8jt9shWJfZwfifio8jt9Exp2fZwfVBS4GTt9///eDP////+CGP//ghjeDA=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("BwABAAQABwAKAAEAAwASAAYAAwAPABIACQAMAAAACQAVAAwADQAZABAADQAYABkAEAAaABMAEAAZABoAEwAbABYAEwAaABsAFgAYAA0AFgAbABgACAAXAAsACAAUABcAAgARAAUAAgAOABEA"),
+"material": SubResource("StandardMaterial3D_rgqho"),
+"name": "Debug",
+"primitive": 3,
+"uv_scale": Vector4(15.6676, 14.9176, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("2gcAACT4///aBwAAJPj//9oHAAAk+P+/2gcAANoHAADaBwAA2gf//9oHAADaB/+/JPgAANoHAAAk+AAA2gf//yT4AADaBwAAJPgAACT4//8k+AAAJPj//yT4AAAk+AAA2gf//yT4///aB///JPj//9oH//8k+P+/2gf//9oHAADaB///2gf//9oH///aB/+/JPj//9oHAAAk+P//2gf//yT4///aBwAAJPj//yT4//8k+P//JPj//yT4//8k+AAAAAD///////8AAP//AAD///////8AAP//////////////f////3//v/9/AAD/f/9//3//v/9/AAD/f/9//3//v/8//3//f////3//v/8//3//f////3//v/9/AAD/f/9//3//v/9/AAD/f/9//3//v/8//3//f////3//v/8//3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8rv6m")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_84des"]
+data = PackedVector3Array(1.579, 1, -1.579, -1.579, 1, 1.579, -1.579, 1, -1.579, 1.579, 1, -1.579, 1.579, 1, 1.579, -1.579, 1, 1.579, -1.579, 1, -1.579, 1.579, 30.5651, -1.579, 1.579, 1, -1.579, -1.579, 1, -1.579, -1.579, 30.5651, -1.579, 1.579, 30.5651, -1.579, 1.579, 1, 1.579, -1.579, 30.5651, 1.579, -1.579, 1, 1.579, 1.579, 1, 1.579, 1.579, 30.5651, 1.579, -1.579, 30.5651, 1.579, -1.579, 30.5651, 1.579, -1.6822, 30.5651, -1.6822, -1.579, 30.5651, -1.579, -1.579, 30.5651, 1.579, -1.6822, 30.5651, 1.6822, -1.6822, 30.5651, -1.6822, -1.579, 30.5651, -1.579, 1.6822, 30.5651, -1.6822, 1.579, 30.5651, -1.579, -1.579, 30.5651, -1.579, -1.6822, 30.5651, -1.6822, 1.6822, 30.5651, -1.6822, 1.579, 30.5651, -1.579, 1.6822, 30.5651, 1.6822, 1.579, 30.5651, 1.579, 1.579, 30.5651, -1.579, 1.6822, 30.5651, -1.6822, 1.6822, 30.5651, 1.6822, 1.579, 30.5651, 1.579, -1.6822, 30.5651, 1.6822, -1.579, 30.5651, 1.579, 1.579, 30.5651, 1.579, 1.6822, 30.5651, 1.6822, -1.6822, 30.5651, 1.6822, 1.579, 1, -1.579, 1.579, 30.5651, 1.579, 1.579, 1, 1.579, 1.579, 1, -1.579, 1.579, 30.5651, -1.579, 1.579, 30.5651, 1.579, -1.579, 1, 1.579, -1.579, 30.5651, -1.579, -1.579, 1, -1.579, -1.579, 1, 1.579, -1.579, 30.5651, 1.579, -1.579, 30.5651, -1.579)
+
+[node name="gameplay_test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b5kos")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DebugLevel" type="Node3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="DebugLevel"]
+transform = Transform3D(112.675, 0, 0, 0, 1, 0, 0, 0, 112.675, 0, 0, 0)
+mesh = SubResource("ArrayMesh_id66q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="DebugLevel/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DebugLevel/Floor/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_84des")
+
+[node name="Ped" parent="." instance=ExtResource("2_n7rsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224598, 1, 25.8653)
+
+[node name="Revolver_pickup" parent="." instance=ExtResource("3_hulfk")]
+transform = Transform3D(1, 0, 0, 0, -0.0304338, -0.999537, 0, 0.999537, -0.0304338, -4.85625, 1.26309, 21.4243)
+sleeping = false
+
+[node name="357AmmoBox" parent="." instance=ExtResource("5_ylp0d")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.0276, 1.35111, 12.3588)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.998637, 0, -0.0521965, -0.0147407, 0.959294, 0.282023, 0.0500718, 0.282408, -0.957987, -2.86724, 9.1011, 7.58464)
+
+[node name="Targets" type="Node3D" parent="."]
+
+[node name="Target" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0.344383, 13.1836, -12.8809)
+
+[node name="Target2" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -43.4596, 13.1836, -12.8809)
+
+[node name="Target3" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -43.4596, 13.1836, 21.1656)
+
+[node name="Target4" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -13.7178, 13.1836, 21.1656)
+
+[node name="Target5" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -13.7178, 34.2625, 37.7128)
+
+[node name="Target6" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 12.5887, 25.0547, -18.0447)
+
+[node name="Target7" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.4207, 25.0547, -18.0447)
+
+[node name="Target8" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 45.7219, 25.0547, -39.9066)
+
+[node name="Target9" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 45.7219, 62.6437, 8.14816)
+
+[node name="Target10" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 45.7219, 81.689, 63.9689)
+
+[node name="Target11" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 45.7219, 14.6973, 63.9689)
+
+[node name="Target12" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 8.3834, 14.6973, 63.9689)
+
+[node name="Target13" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -32.9213, 14.6973, 67.4878)
+
+[node name="Target14" parent="Targets" groups=["target"] instance=ExtResource("4_k2gtj")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -32.9213, 14.6973, 67.4878)

@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://74ro8jbmem5y"]
+
+[ext_resource type="Script" path="res://Script/Peds/inventory.gd" id="1_sgogv"]
+[ext_resource type="PackedScene" uid="uid://cl330fkou8pmv" path="res://Nodes/Items/unarmed.tscn" id="2_r0ke0"]
+[ext_resource type="Script" path="res://Script/UI/inventory_ui.gd" id="3_274ui"]
+[ext_resource type="PackedScene" uid="uid://rt5rsvcgjsgb" path="res://prefabs/UI/UISlot.tscn" id="4_osto1"]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_sgogv")
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Unarmed" parent="Items" instance=ExtResource("2_r0ke0")]
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="CanvasGroup" parent="InventoryUI"]
+script = ExtResource("3_274ui")
+
+[node name="InventoryControl" type="Control" parent="InventoryUI/Inventory"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryUI/Inventory/InventoryControl"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 200
+
+[node name="UISlot" parent="InventoryUI/Inventory/InventoryControl/HBoxContainer" instance=ExtResource("4_osto1")]
+visible = false
+layout_mode = 2
+
+[node name="UISlot2" parent="InventoryUI/Inventory/InventoryControl/HBoxContainer" instance=ExtResource("4_osto1")]
+visible = false
+layout_mode = 2
+
+[node name="UISlot3" parent="InventoryUI/Inventory/InventoryControl/HBoxContainer" instance=ExtResource("4_osto1")]
+visible = false
+layout_mode = 2
+
+[node name="UISlot4" parent="InventoryUI/Inventory/InventoryControl/HBoxContainer" instance=ExtResource("4_osto1")]
+visible = false
+layout_mode = 2

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjl1pc7nadn2o"]
+
+[ext_resource type="Script" path="res://Script/Interactable/pickup.gd" id="1_5vshg"]
+[ext_resource type="PackedScene" uid="uid://bn0b6iy5ktuld" path="res://Resources/Models/Weapons/Revolver/Revolver.glb" id="2_i87ds"]
+[ext_resource type="PackedScene" uid="uid://dl5n6pb83s66d" path="res://Nodes/Items/revolver.tscn" id="3_b67gf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18dvm"]
+size = Vector3(9.03223, 6.72424, 1.31323)
+
+[node name="Revolver_pickup" type="RigidBody3D" groups=["pickup"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_5vshg")
+title = "Revolver"
+current_mag_ammo = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00770271, -0.00879338, -0.00255127)
+shape = SubResource("BoxShape3D_18dvm")
+
+[node name="ItemData" parent="." instance=ExtResource("3_b67gf")]
+pickup_scene = "res://prefabs/Pickups/weapons/revolver_pickup.tscn"
+
+[node name="Revolver Model" parent="." instance=ExtResource("2_i87ds")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

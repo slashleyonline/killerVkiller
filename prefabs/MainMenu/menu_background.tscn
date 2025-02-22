@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cro7wpyipbddw"]
+
+[ext_resource type="PackedScene" uid="uid://c3q41pmrh4xx2" path="res://prefabs/MainMenu/walking_ped_spawner.tscn" id="1_iirjn"]
+[ext_resource type="AudioStream" uid="uid://drjli0bd8fa5k" path="res://Resources/Audio/Music/Town.mp3" id="2_7gqgi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kvr3b"]
+sky_top_color = Color(0.797499, 0.834473, 0.886126, 1)
+sky_horizon_color = Color(0.949375, 0.958618, 0.971532, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.949375, 0.958618, 0.971532, 1)
+
+[sub_resource type="Sky" id="Sky_pfop6"]
+sky_material = SubResource("ProceduralSkyMaterial_kvr3b")
+
+[sub_resource type="Environment" id="Environment_qmyru"]
+background_mode = 2
+sky = SubResource("Sky_pfop6")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_saturation = 0.2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ww0sk"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_tc60r"]
+density = 4.5405
+albedo = Color(0.419813, 0.419813, 0.419813, 1)
+emission = Color(0.489517, 0.449321, 0.431896, 1)
+edge_fade = 2.12927
+
+[node name="MenuBackground" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qmyru")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="WalkingPedSpawner" parent="." instance=ExtResource("1_iirjn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.21634, -2.71917)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(8.22961, 0, 0, 0, 0.0571156, -4.28561, 0, 0.0528507, 4.63144, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_ww0sk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998297, 0.0583307, 0, -0.0583307, 0.998297, 0, 3.40627, 70.9383)
+projection = 1
+current = true
+size = 5.543
+near = 10.0
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0420326, 0.999116, 0, -0.999116, -0.0420326, 0, 1.74667, -2.87998)
+size = Vector3(44.6514, 30.2145, 29.2294)
+material = SubResource("FogMaterial_tc60r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7gqgi")
+autoplay = true
+parameters/looping = true

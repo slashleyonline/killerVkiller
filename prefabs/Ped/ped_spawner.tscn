@@ -1,0 +1,63 @@
+[gd_scene load_steps=23 format=3 uid="uid://8v72mistss6s"]
+
+[ext_resource type="Script" path="res://Script/Peds/ped_spawner.gd" id="1_ft3kp"]
+[ext_resource type="ArrayMesh" uid="uid://cjcwn6ppjdir3" path="res://Resources/Models/Player/Cosmetic/Hair/Combover.tres" id="2_1fsab"]
+[ext_resource type="ArrayMesh" uid="uid://b3h50r8bvn2n5" path="res://Resources/Models/Player/Cosmetic/Hair/FlatTop.tres" id="3_n82p2"]
+[ext_resource type="ArrayMesh" uid="uid://du7nl7mwc3cyu" path="res://Resources/Models/Player/Cosmetic/Hair/Long.tres" id="4_uixuk"]
+[ext_resource type="ArrayMesh" uid="uid://dea3slaw3tsm" path="res://Resources/Models/Player/Cosmetic/Hair/Curly.tres" id="5_6w2ly"]
+[ext_resource type="ArrayMesh" uid="uid://c7a7mef0ytbqi" path="res://Resources/Models/Player/Cosmetic/Hair/Bald.tres" id="6_nfu6w"]
+[ext_resource type="Material" uid="uid://jkjrq7qa0o0f" path="res://Resources/Materials/cos_beige.tres" id="19_lp83r"]
+[ext_resource type="Material" uid="uid://cjkc83y8yyg5w" path="res://Resources/Materials/cos_sandybrown.tres" id="20_e52ux"]
+[ext_resource type="Material" uid="uid://c4hdjimxft8l5" path="res://Resources/Materials/cos_white.tres" id="21_eg50k"]
+[ext_resource type="Material" uid="uid://dsmgt84r1cwbw" path="res://Resources/Materials/cos_skinbrown.tres" id="22_ruivh"]
+[ext_resource type="Material" uid="uid://cm4jtwe433ym6" path="res://Resources/Materials/cos_lightyellow.tres" id="23_sbn3j"]
+[ext_resource type="Material" uid="uid://s3a2asv52qtu" path="res://Resources/Materials/cos_coral.tres" id="24_bv7pq"]
+[ext_resource type="Material" uid="uid://l8vdl8yx4oql" path="res://Resources/Materials/cos_crimson.tres" id="25_iuv8q"]
+[ext_resource type="Material" uid="uid://dmmcx6gwvd46q" path="res://Resources/Materials/cos_navyblue.tres" id="26_l0vyi"]
+[ext_resource type="Material" uid="uid://3oeocyw33old" path="res://Resources/Materials/cos_olivegreen.tres" id="27_d2mir"]
+[ext_resource type="Material" uid="uid://df717mukhoe1n" path="res://Resources/Materials/cos_black.tres" id="28_r1wqp"]
+[ext_resource type="Material" uid="uid://70it4o5mxno2" path="res://Resources/Materials/cos_violet.tres" id="29_we14w"]
+[ext_resource type="Material" uid="uid://4geut0alfdjw" path="res://Resources/Materials/cos_neongreen.tres" id="30_ktpo8"]
+[ext_resource type="Material" uid="uid://7qkypn7faxu1" path="res://Resources/Materials/cos_pink.tres" id="31_37435"]
+[ext_resource type="Material" uid="uid://bn3wo2tvvf6e3" path="res://Resources/Materials/cos_orange.tres" id="32_itamc"]
+[ext_resource type="Material" uid="uid://bww6sraru85yr" path="res://Resources/Materials/cos_brown.tres" id="33_k2ec4"]
+[ext_resource type="Material" uid="uid://y47wrtkynher" path="res://Resources/Materials/cos_hairred.tres" id="34_6cc5j"]
+
+[node name="PedLoader" type="Node3D"]
+script = ExtResource("1_ft3kp")
+dict_hair = {
+"Bald": ExtResource("6_nfu6w"),
+"Combover": ExtResource("2_1fsab"),
+"Curly": ExtResource("5_6w2ly"),
+"FlatTop": ExtResource("3_n82p2"),
+"Long": ExtResource("4_uixuk")
+}
+dict_skin_color = {
+"Beige": ExtResource("19_lp83r"),
+"Coral": ExtResource("24_bv7pq"),
+"Dark Brown": ExtResource("22_ruivh"),
+"Light Brown": ExtResource("20_e52ux"),
+"Light Yellow": ExtResource("23_sbn3j"),
+"White": ExtResource("21_eg50k")
+}
+dict_clothes_color = {
+"Black": ExtResource("28_r1wqp"),
+"Brown": ExtResource("33_k2ec4"),
+"Crimson": ExtResource("25_iuv8q"),
+"Navy Blue": ExtResource("26_l0vyi"),
+"Neon Green": ExtResource("30_ktpo8"),
+"Olive Green": ExtResource("27_d2mir"),
+"Orange": ExtResource("32_itamc"),
+"Pink": ExtResource("31_37435"),
+"Violet": ExtResource("29_we14w"),
+"White": ExtResource("21_eg50k")
+}
+dict_hair_color = {
+"Black": ExtResource("28_r1wqp"),
+"Blonde": ExtResource("23_sbn3j"),
+"Brown": ExtResource("33_k2ec4"),
+"Gray": ExtResource("34_6cc5j"),
+"Navy Blue": ExtResource("26_l0vyi"),
+"Neon Green": ExtResource("30_ktpo8"),
+"Red": ExtResource("34_6cc5j")
+}

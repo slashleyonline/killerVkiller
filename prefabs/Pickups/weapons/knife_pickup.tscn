@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://lvfsg73w2vgo"]
+
+[ext_resource type="Script" path="res://Script/Interactable/pickup.gd" id="1_1nxb5"]
+[ext_resource type="PackedScene" uid="uid://dl5n6pb83s66d" path="res://Nodes/Items/revolver.tscn" id="2_3i2gk"]
+[ext_resource type="Texture2D" uid="uid://y12a7tsrrphb" path="res://Resources/textures/Item Icons/Knife.png" id="3_jfot8"]
+[ext_resource type="PackedScene" uid="uid://b4emkjkqtm01n" path="res://Resources/Models/Weapons/Knife/Knife.glb" id="4_rb5kl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18dvm"]
+size = Vector3(2.52625, 19.0601, 0.726563)
+
+[node name="Knife_pickup" type="RigidBody3D" groups=["pickup"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_1nxb5")
+title = "Knife"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.00514515, 0.174875, -0.00255127)
+shape = SubResource("BoxShape3D_18dvm")
+
+[node name="ItemData" parent="." instance=ExtResource("2_3i2gk")]
+title = "Knife"
+icon = ExtResource("3_jfot8")
+weapon_scene = "res://prefabs/Weapon/knife_weapon.tscn"
+pickup_scene = "res://prefabs/Pickups/weapons/knife_pickup.tscn"
+is_gun = false
+
+[node name="Knife" parent="." instance=ExtResource("4_rb5kl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.384777, 0)

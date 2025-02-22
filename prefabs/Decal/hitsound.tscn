@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://btojqclgdagw"]
+
+[ext_resource type="AudioStream" uid="uid://dpy0gsku6md2l" path="res://Resources/Audio/guns/bullethit.wav" id="1_vb4sr"]
+[ext_resource type="Script" path="res://prefabs/Decal/one_shot_audio_emitter.gd" id="2_n8h3f"]
+
+[node name="Hitsound" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_vb4sr")
+pitch_scale = 0.62
+autoplay = true
+script = ExtResource("2_n8h3f")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

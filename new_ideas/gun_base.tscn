@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bad03w0tuk1h1"]
+
+[ext_resource type="Script" path="res://new_ideas/new_scripts/gun_base.gd" id="1_6heb0"]
+[ext_resource type="Script" path="res://new_ideas/new_scripts/fire_logic.gd" id="2_1cuwc"]
+[ext_resource type="Script" path="res://new_ideas/new_scripts/ammo_logic.gd" id="3_l43it"]
+[ext_resource type="Script" path="res://new_ideas/new_scripts/weapon_animation.gd" id="4_g60v2"]
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_6heb0")
+
+[node name="Fire" type="Node3D" parent="."]
+script = ExtResource("2_1cuwc")
+bullet_scene_path = "res://prefabs/Weapon/Bullets/revolver_bullet.tscn"
+
+[node name="Ammo_Logic" type="Node3D" parent="."]
+script = ExtResource("3_l43it")
+max_bullets = 5
+
+[node name="Animation" type="Node3D" parent="."]
+script = ExtResource("4_g60v2")

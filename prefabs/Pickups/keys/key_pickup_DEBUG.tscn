@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://byw118qogvks5"]
+
+[ext_resource type="Script" path="res://Script/Interactable/pickup.gd" id="1_auie5"]
+[ext_resource type="PackedScene" uid="uid://dl5n6pb83s66d" path="res://Nodes/Items/revolver.tscn" id="2_t4tmd"]
+[ext_resource type="Texture2D" uid="uid://5fy1x5in6mox" path="res://Resources/textures/Item Icons/Key.png" id="3_o1hv8"]
+[ext_resource type="PackedScene" uid="uid://6rbuw47ue7qr" path="res://Resources/Models/ItemBox/Key/key.glb" id="4_70ygq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18dvm"]
+size = Vector3(3.70142, 1.54614, 10.3339)
+
+[node name="Key_pickup_DEBUG" type="RigidBody3D" groups=["pickup"]]
+collision_layer = 4
+script = ExtResource("1_auie5")
+title = "DEBUG! Key"
+key_color_str = "Debug"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.00514515, 0.0103608, 0.269513)
+shape = SubResource("BoxShape3D_18dvm")
+
+[node name="ItemData" parent="." instance=ExtResource("2_t4tmd")]
+title = "DEBUG! Key"
+icon = ExtResource("3_o1hv8")
+weapon_scene = "res://prefabs/Weapon/key_weapon_DEBUG.tscn"
+pickup_scene = "res://prefabs/Pickups/keys/key_pickup_DEBUG.tscn"
+is_gun = false
+
+[node name="key" parent="." instance=ExtResource("4_70ygq")]
+transform = Transform3D(-2.49155e-08, -0.57, 0, 0.57, -2.49155e-08, 0, 0, 0, 0.57, 0, 0, 0)

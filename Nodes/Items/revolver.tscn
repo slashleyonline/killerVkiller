@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5n6pb83s66d"]
+
+[ext_resource type="Script" path="res://Script/Items/Item.gd" id="1_15ie7"]
+[ext_resource type="Texture2D" uid="uid://cpbg3gr6x3ii" path="res://Resources/textures/Item Icons/Revolver.png" id="2_qso12"]
+
+[node name="RevolverItem" type="Node"]
+script = ExtResource("1_15ie7")
+title = "Revolver"
+icon = ExtResource("2_qso12")
+weapon_scene = "res://prefabs/Weapon/revolver_weapon.tscn"
+pickup_scene = "res://prefabs/Pickups/revolver_pickup.tscn"
+is_gun = true

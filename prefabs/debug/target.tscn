@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://did2fjrq4xu4d"]
+
+[ext_resource type="Script" path="res://prefabs/debug/target.gd" id="1_s6ukm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_77d7r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2g0w7"]
+albedo_color = Color(1, 0.0117647, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2lwt"]
+
+[node name="Target" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_s6ukm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_77d7r")
+surface_material_override/0 = SubResource("StandardMaterial3D_2g0w7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_h2lwt")
